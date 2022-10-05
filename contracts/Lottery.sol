@@ -70,6 +70,13 @@ contract Lottery is VRFConsumerBase, Ownable {
         emit RequestedRandomness(requestId);
     }
 
+    function printStatus()
+	internal
+    {
+	require(lottery_state == LOTTERY_STATE.CALCULATING_WINNER,"Invalid State");
+	randomness = 0.0;
+    }
+
     function fulfillRandomness(bytes32 _requestId, uint256 _randomness)
         internal
         override
