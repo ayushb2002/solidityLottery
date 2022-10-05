@@ -1,0 +1,1 @@
+## Solidity based lottery system
